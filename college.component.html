@@ -1,0 +1,103 @@
+<form>
+
+  <div class="form-group">
+    <mk-box header="College Information" [isCollapsable]="false" [isRemovable]="false">
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="collegeObj.collegeName" name="collegeName"
+              placeholder="College Name" id="collegeName" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForCollegeName }}</div> <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="collegeObj.addressLine1" name="addressLine1"
+              placeholder="Address Line1" id="addressLine1" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForAddressLine1}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="collegeObj.addressLine2" name="addressLine2"
+              placeholder="Address Line2" id="addressLine2" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" style="width: 150px; margin-left: 5px"
+              [(ngModel)]="collegeObj.city" name="city" placeholder="City" id="city" required
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForCity}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" style="width: 150px; margin-left: 5px"
+              [(ngModel)]="collegeObj.state" name="state" placeholder="State" id="state" required
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForState}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" style="width: 150px; margin-left: 5px"
+              [(ngModel)]="collegeObj.zip" name="zip" placeholder="Zip" id="zip" required
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForZip}}</div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="collegeObj.phone1" name="phone1"
+              placeholder="Cell Phone" id="phone1" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForCellPhone}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="collegeObj.phone2" name="otherPhone"
+              placeholder="Other Phone" id="othernumber" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="email" class="form-control" [(ngModel)]="collegeObj.email" name="email"
+              placeholder="Email" id="email" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForEmail}}</div>
+        </div>
+      </div>
+    </mk-box>
+    <div class="row">
+      <div class="pull-right">
+        <button type="submit" (click)=" pushCollege()" class="btn btn-success">Submit</button>
+        <button type="cancel" class="btn btn-danger" style="margin-left: 10px"
+          onclick="this.form.reset();">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</form>

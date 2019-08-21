@@ -1,0 +1,138 @@
+<form>
+
+  <div class="form-group">
+    <mk-box header="Applicant Information" [isCollapsable]="false" [isRemovable]="false">
+        <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="applicantObj.lastName" name="lastName"
+              placeholder="Last Name" id="lastName" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForLastName}}</div> <br>
+        </div>
+  <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput [(ngModel)]="applicantObj.firstName" type="text" class="form-control"
+              name="firstName" placeholder="First Name" id="firstName" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForFirstName}}</div>
+        </div>
+      </div>
+<div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput [(ngModel)]="applicantObj.middle" type="text" class="form-control"
+              placeholder="Middlle Name" name="middle" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4 col-xs-12"><br>
+          <mat-form-field>
+            <mat-label>sports</mat-label>
+            <mat-select [(ngModel)]="applicantObj.sports" style="width:150px;" [ngModelOptions]="{standalone: true}">
+              <mat-option value="Football">Football</mat-option>
+              <mat-option value="Hockey">Hockey</mat-option>
+              <mat-option value="BlVolleyballack">Volleyball</mat-option>
+              <mat-option value="Basketball">Basketball</mat-option>
+              <mat-option value="Cricket">Cricket</mat-option>
+              <mat-option value="Handball">Handball</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      
+      
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control"
+              [(ngModel)]="applicantObj.addressLine1" name="addressLine1"
+              placeholder="Address Line1" id="addressLine1" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForAddressLine1}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control"
+              [(ngModel)]="applicantObj.addressLine2" name="addressLine2"
+              placeholder="Address Line2" id="addressLine2" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" style="width: 150px; margin-left: 5px"
+              [(ngModel)]="applicantObj.city" name="city" placeholder="City" id="city" required
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForCity}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" style="width: 150px; margin-left: 5px"
+              [(ngModel)]="applicantObj.state" name="state" placeholder="State" id="state"
+              required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForState}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" style="width: 150px; margin-left: 5px"
+              [(ngModel)]="applicantObj.zip" name="zip" placeholder="Zip" id="zip" required
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForZip}}</div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="applicantObj.phone1"
+              name="phone1" placeholder="Cell Phone" id="phone1" required [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div style="color: red">
+            {{errorMsgForCellPhone}}</div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <mat-form-field>
+            <input matInput type="text" class="form-control" [(ngModel)]="applicantObj.phone2"
+              name="otherPhone" placeholder="Other Phone" id="othernumber" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-md-4 col-xs-12">
+        <mat-form-field>
+          <input matInput type="email" class="form-control" [(ngModel)]="applicantObj.email"
+            name="email" placeholder="Email" id="email" required [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">
+          {{errorMsgForEmail}}</div>
+      </div>
+    </div>
+    </mk-box>
+      <div class="row">
+        <div class="pull-right">
+          <button type="submit" (click)=" pushApplicant()" class="btn btn-success">Submit</button>
+          <button type="cancel" class="btn btn-danger" style="margin-left: 10px"
+            onclick="this.form.reset();">Cancel</button>
+        </div>
+
+      </div>
+  </div>
+</form>
